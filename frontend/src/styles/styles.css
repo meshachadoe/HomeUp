@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form input,
+form label,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 95%;
+}
+
+.App {
+  height: 80vh;
+  width: 80vw;
+  padding: 5vw 10vw;
+}
+
+header {
+  height: 20%;
+}
+
+header h1 {
+  color: #6edb8d;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form .form-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-right: 24px;
+}
+
+form label {
+  font-weight: 300;
+  margin: 0.6rem 0;
+  color: #00b5ce;
+  font-size: 0.9rem;
+}
+
+form input {
+  background-color: #f3f3f3;
+  padding: 0.5rem 0.8rem;
+  border: 2px solid #f3f3f3;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+form input:focus {
+  border: 2px solid #00b5ce;
+}
+
+form button {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  width: 50%;
+  padding: 0.5rem;
+  background-color: #6edb8d;
+  margin-top: 1rem;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+form button:hover {
+  background-color: #060e21;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.login__form {
+  width: 350px;
+}
+
+.login__form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.login__form__register {
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login__form__register p {
+  font-size: 1rem;
+  text-align: center;
+  color: #060e21;
+  margin: 0.5rem 0;
+}
+
+.login__form__register button {
+  margin: 0.3rem 0;
+  padding: 0.6rem;
+  border-radius: 20px;
+  background-color: #fff;
+  border: 2px solid #00b5ce;
+  color: #00b5ce;
+  font-size: 1rem;
+}
+
+.login__form__register button:hover {
+  background-color: #00b5ce;
+  color: #f3f3f3;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.register h2 {
+  width: 20%;
+}
+
+.register__form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 700px;
+}
+
+.register__form form .additional-req {
+  height: 100px;
+}
+
+.register__form form .register-submit {
+  background-color: #00b5ce;
+  cursor: pointer;
+}
+
+.register__form form .register-submit:hover {
+  background-color: #060e21;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+/*# sourceMappingURL=styles.css.map */
