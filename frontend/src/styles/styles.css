@@ -32,7 +32,7 @@ h2 {
 .App {
   height: 80vh;
   width: 80vw;
-  padding: 5vw 10vw;
+  padding: 5% 10%;
 }
 
 header {
@@ -41,6 +41,7 @@ header {
 
 header h1 {
   color: #6edb8d;
+  line-height: 75%;
 }
 
 form {
@@ -68,7 +69,7 @@ form .form-col {
 form label {
   font-weight: 300;
   margin: 0.6rem 0;
-  color: #00b5ce;
+  color: #060e21;
   font-size: 0.9rem;
 }
 
@@ -113,9 +114,9 @@ form button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login__form {
@@ -145,7 +146,9 @@ form button:hover {
   margin: 0.5rem 0;
 }
 
-.login__form__register button {
+.login a {
+  text-align: center;
+  text-decoration: none;
   margin: 0.3rem 0;
   padding: 0.6rem;
   border-radius: 20px;
@@ -155,7 +158,7 @@ form button:hover {
   font-size: 1rem;
 }
 
-.login__form__register button:hover {
+.login a:hover {
   background-color: #00b5ce;
   color: #f3f3f3;
   -webkit-transition: background-color 0.2s;
@@ -174,10 +177,21 @@ form button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.register h2 {
-  width: 20%;
+.register__heading h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.register__heading a {
+  font-size: 1rem;
+  background: none;
+  color: #00b5ce;
+  text-decoration: underline;
 }
 
 .register__form form {

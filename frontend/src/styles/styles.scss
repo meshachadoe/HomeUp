@@ -37,13 +37,14 @@ h2 {
 .App {
 	height: 80vh;
 	width: 80vw;
-	padding: 5vw 10vw;
+	padding: 5% 10%;
 }
 
 header {
 	height: 20%;
 	h1 {
 		color: $primary-color;
+		line-height: 75%;
 	}
 }
 
@@ -59,7 +60,7 @@ form {
 	label {
 		font-weight: 300;
 		margin: 0.6rem 0;
-		color: $secondary-color;
+		color: $dark-color;
 		font-size: 0.9rem;
 	}
 	input {
@@ -94,7 +95,7 @@ form {
 .login {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: center;
 	&__form {
 		width: 350px;
 		h2 {
@@ -111,21 +112,23 @@ form {
 				color: $dark-color;
 				margin: 0.5rem 0;
 			}
-			button {
-				margin: 0.3rem 0;
-				padding: 0.6rem;
-				border-radius: 20px;
-				background-color: #fff;
-				border: 2px solid $secondary-color;
-				color: $secondary-color;
-				font-size: 1rem;
-				&:hover {
-					background-color: $secondary-color;
-					color: $light-color;
-					transition: background-color 0.2s;
-					cursor: pointer;
-				}
-			}
+		}
+	}
+	a {
+		text-align: center;
+		text-decoration: none;
+		margin: 0.3rem 0;
+		padding: 0.6rem;
+		border-radius: 20px;
+		background-color: #fff;
+		border: 2px solid $secondary-color;
+		color: $secondary-color;
+		font-size: 1rem;
+		&:hover {
+			background-color: $secondary-color;
+			color: $light-color;
+			transition: background-color 0.2s;
+			cursor: pointer;
 		}
 	}
 }
@@ -134,8 +137,18 @@ form {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	h2 {
-		width: 20%;
+	align-items: center;
+	&__heading {
+		h2 {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+		a {
+			font-size: 1rem;
+			background: none;
+			color: $secondary-color;
+			text-decoration: underline;
+		}
 	}
 	&__form form {
 		display: flex;
