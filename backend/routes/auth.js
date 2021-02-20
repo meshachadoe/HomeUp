@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/user');
-const auth = require('../middleware/auth');
 
 router.post("/register",
     [check("username", "Please enter a valid username").not().isEmpty(),
@@ -15,7 +14,7 @@ router.post("/register",
         if (!errors.isEmpty()) {
             return res.status(400).json({ message: errors.array() });
         }
-        const { username, password, accountType } = req.body;
+        const { username, password, isApplicant } = req.body;
 
         //checks if username already exists
         try {

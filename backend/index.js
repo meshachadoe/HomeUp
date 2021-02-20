@@ -6,7 +6,8 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const authRouter = require("./routes/auth");
-const listRouter = require("./routes/app");
+const appRouter = require("./routes/app");
+const hostRouter = require("./routes/host");
 
 const app = express();
 
@@ -22,6 +23,7 @@ mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology
   .catch((error) => console.log(error.message));
 
 app.use("/user", authRouter);
-app.use("/list", listRouter);
+app.use("/app", appRouter);
+app.use("/host", hostRouter);
 
 module.exports = app;
