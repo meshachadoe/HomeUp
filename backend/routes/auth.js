@@ -55,11 +55,11 @@ router.post("/login",
         try {
             let user = await User.findOne({ username });
             if (!user) {
-                return res.status(400).json({ message: "Incorrect username" });
+                return res.status(400).json({ message: "Incorrect username or password" });
             }
             const pwMatch = await bcrypt.compare(password, user.password);
             if (!pwMatch) {
-                return res.status(400).json({ message: "Incorrect password" });
+                return res.status(400).json({ message: "Incorrect username or password" });
             }
             const payload = { username: { id: user.id }};
             jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
