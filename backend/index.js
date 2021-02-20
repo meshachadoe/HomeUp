@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 
 const authRouter = require("./routes/auth");
-const appRouter = require("./routes/app");
+const appRouter = require("./routes/applicant");
 const hostRouter = require("./routes/host");
 
 const app = express();
