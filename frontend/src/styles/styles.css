@@ -324,4 +324,44 @@ form button:hover {
 .profilecard p {
   text-align: right;
 }
+
+.statuspage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1vh;
+}
+
+.statuspage .statuscard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #00b5ce;
+  height: 25vh;
+  width: 35vw;
+  border-radius: 20px;
+  padding: 1rem;
+  line-height: 4rem;
+}
+
+.statuspage h2 {
+  font-weight: 300;
+  font-style: italic;
+  text-align: left;
+}
+
+.statuspage p {
+  font-size: 4rem;
+  width: 10%;
+}
 /*# sourceMappingURL=styles.css.map */

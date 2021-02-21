@@ -245,3 +245,29 @@ form {
 		text-align: right;
 	}
 }
+
+.statuspage {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 1vh;
+	.statuscard {
+		display: flex;
+		background-color: $secondary-color;
+		height: 25vh;
+		width: 35vw;
+		border-radius: 20px;
+		padding: 1rem;
+		line-height: 4rem;
+	}
+	h2 {
+		font-weight: 300;
+		font-style: italic;
+		text-align: left;
+	}
+	p {
+		font-size: 4rem;
+		width: 10%;
+	}
+}

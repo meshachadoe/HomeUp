@@ -6,6 +6,7 @@ import RegisterApplicant from './components/RegisterApplicant'
 import RegisterContributor from './components/RegisterContributor'
 import HostView from './components/HostView'
 import ApplicantView from './components/ApplicantView'
+import Status from './components/Status'
 
 function App() {
 	return (
@@ -27,6 +28,9 @@ function App() {
 					</Route>
 					<Route path="/applicant">
 						<ApplicantView />
+					</Route>
+					<Route>
+						<Status/>
 					</Route>
 				</Switch>
 			</Router>
