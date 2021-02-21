@@ -61,7 +61,7 @@ router.post("/login",
             if (!pwMatch) {
                 return res.status(400).json({ message: "Incorrect username or password" });
             }
-            const payload = { username: { id: user.id }};
+            const payload = { user: { id: user.id }};
             jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
                 if (err) throw err;
                 res.status(200).json({ token });
