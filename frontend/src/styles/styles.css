@@ -50,6 +50,10 @@ header .logo-blue {
   color: #00b5ce;
 }
 
+header a {
+  text-decoration: none;
+}
+
 form {
   display: -webkit-box;
   display: -ms-flexbox;
