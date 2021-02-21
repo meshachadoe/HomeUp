@@ -16,6 +16,7 @@ h5,
 h6,
 p,
 form input,
+form textarea,
 form label,
 button,
 ul {
@@ -68,7 +69,8 @@ form {
 		color: $dark-color;
 		font-size: 0.9rem;
 	}
-	input {
+	input,
+	.additional-req {
 		background-color: $light-color;
 		padding: 0.5rem 0.8rem;
 		border: 2px solid $light-color;
@@ -161,6 +163,7 @@ form {
 		width: 700px;
 		.additional-req {
 			height: 100px;
+			word-wrap: normal;
 		}
 		.register-submit {
 			background-color: $secondary-color;
@@ -206,7 +209,7 @@ form {
 		line-height: 90%;
 	}
 	ul {
-		margin: 2rem 0;
+		margin: 1rem 0;
 		li {
 			list-style: none;
 		}
@@ -229,6 +232,15 @@ form {
 			transition: background-color 0.2s, color 0.2s;
 		}
 	}
+	&-location {
+		margin-top: 0.5rem;
+		font-style: italic;
+	}
+	&-subheading {
+		padding-top: 1rem;
+		font-style: italic;
+		font-size: 0.8rem;
+	}
 }
 
 .profilecard {
@@ -245,4 +257,13 @@ form {
 	p {
 		text-align: right;
 	}
+}
+
+.error {
+	color: rgb(247, 70, 70);
+	font-size: 1rem;
+}
+
+.blue {
+	background-color: $secondary-color;
 }

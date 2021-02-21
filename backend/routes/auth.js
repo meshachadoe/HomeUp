@@ -4,6 +4,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
 const User = require('../models/user');
+const HostCard = require('../models/hostCard');
+const AppCard = require('../models/appCard');
 
 router.post("/register",
     [check("username", "Please enter a valid username").not().isEmpty(),
@@ -28,17 +30,41 @@ router.post("/register",
 
             await user.save();
 
+            let card;            
+            if (isApplicant) {
+                const { name, location, contactInfo, minimumStay, additionalInfo } = req.body;
+                card = new AppCard({
+                    username,
+                    name,
+                    location,
+                    contactInfo,
+                    minimumStay,
+                    additionalInfo,
+                });
+            } else {
+                const { name, location, phone, maximumStay, description } = req.body;
+                card = new HostCard({
+                    username,
+                    name,
+                    location,
+                    phone,
+                    maximumStay,
+                    description,
+                });
+            }
+
+            await card.save();
             const payload = {
                 user: { id: user.id }
             };
 
-            jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
+            jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: 7200 }, (err, token) => {
                 if (err) throw err;
                 res.status(200).json({ token });
             });
         } catch (err) {
             console.log(err.message);
-            res.status(500).send("Error in saving new user");
+            res.status(500).send("Error in saving new user and card");
         }
 });
 

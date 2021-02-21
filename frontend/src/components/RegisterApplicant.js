@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import {Link, useHistory} from 'react-router-dom'
 import axios from 'axios'
 
 const BACKEND_URL = 'http://localhost:5000/'
@@ -8,41 +8,46 @@ const RegisterApplicant = () => {
     const [ username, setUsername ] = useState("")
     const [ name, setName ] = useState("")
     const [ password, setPassword ] = useState("")
+    const [ confirmPassword, setConfirmPassword ] = useState("")
     const [ location, setLocation ] = useState("")
     const [ contact, setContact ] = useState("")
     const [ period, setPeriod ] = useState("")
     const [ additional, setAdditional ] = useState("")
     const [ error, setError ] = useState("")
 
+    const history = useHistory()
+
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (!(username || name || password || confirmPassword || location || contact || period)) {
+            setError("Please fill in all fields")
+            return
+        }
+        if (confirmPassword !== password) {
+            setError("Passwords do not match")
+            return
+        }
+        if (password.length < 8) {
+            setError("Password has to be at least 8 characters");
+            return;
+        }
+
         axios.post(BACKEND_URL + 'user/register', {
-            username: username,
-            password: password,
+            username,
+            password,
             isApplicant: true,
-        })
-        .then(async (response) => {
-            // axios.post(BACKEND_URL + 'app/addCard', {
-            //     username,
-            //     name,
-            //     location,
-            //     contactInfo: contact,
-            //     minimumStay: period,
-            //     additionalInfo: additional
-            // })
-            // const body = await response.json();
-            // // console.log(body);
-            // if (!response.ok) {
-            // //   setError(body.message)
-            // } else {
-            // //   setCookie("token", body.token);
-            // }
+            name,
+            location,
+            contactInfo: contact,
+            minimumStay: period,
+            additionalInfo: additional
         })
         .catch((error) => {
-            console.log(error.response.data.message[0].msg) 
-            // console.log(error.response.status)
-            setError(error.body.message)
+            console.log(error)
+            // setError(error.response.data.message)
         });
+
+        history.push("/")
     }
 
     return (
@@ -57,9 +62,6 @@ const RegisterApplicant = () => {
                     <div className="form-col">
                         <label>username</label>
                         <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}></input>
-                        {
-                            error.length ? <p>{error}</p> : ""
-                        }
                         <label>name</label>
                         <input type="text" value={name} onChange={(e) => setName(e.target.value)}></input>
                         <label>password</label>
@@ -67,7 +69,7 @@ const RegisterApplicant = () => {
                             setPassword(e.target.value)}
                         }></input>
                         <label>confirm password</label>
-                        <input type="password"></input>
+                        <input type="password" value={confirmPassword} onChange={(e) => {setConfirmPassword(e.target.value)}}></input>
                     </div>
                     <div className="form-col">
                         <label>current location</label>
@@ -77,7 +79,10 @@ const RegisterApplicant = () => {
                         <label>minimum stay</label>
                         <input type="text" value={period} onChange={(e) => setPeriod(e.target.value)} placeholder="e.g. 3 weeks"></input>
                         <label>additional information</label>
-                        <input type="text" value={additional} onChange={(e) => setAdditional(e.target.value)} className="additional-req"></input>
+                        <textarea value={additional} onChange={(e) => setAdditional(e.target.value)} className="additional-req"></textarea>
+                        
+                        { error.length ? <p className="error">{error}</p> : "" }
+                        
                         <button className="register-submit">register</button>
                     </div>
                 </form>

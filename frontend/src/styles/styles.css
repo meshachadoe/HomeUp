@@ -9,6 +9,7 @@ h5,
 h6,
 p,
 form input,
+form textarea,
 form label,
 button,
 ul {
@@ -78,7 +79,8 @@ form label {
   font-size: 0.9rem;
 }
 
-form input {
+form input,
+form .additional-req {
   background-color: #f3f3f3;
   padding: 0.5rem 0.8rem;
   border: 2px solid #f3f3f3;
@@ -87,7 +89,8 @@ form input {
   font-size: 1rem;
 }
 
-form input:focus {
+form input:focus,
+form .additional-req:focus {
   border: 2px solid #00b5ce;
 }
 
@@ -212,6 +215,7 @@ form button:hover {
 
 .register__form form .additional-req {
   height: 100px;
+  word-wrap: normal;
 }
 
 .register__form form .register-submit {
@@ -272,7 +276,7 @@ form button:hover {
 }
 
 .detailcard ul {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .detailcard ul li {
@@ -301,6 +305,17 @@ form button:hover {
   transition: background-color 0.2s, color 0.2s;
 }
 
+.detailcard-location {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.detailcard-subheading {
+  padding-top: 1rem;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
 .profilecard {
   background-color: #6edb8d;
   border-radius: 10px;
@@ -324,5 +339,14 @@ form button:hover {
 
 .profilecard p {
   text-align: right;
+}
+
+.error {
+  color: #f74646;
+  font-size: 1rem;
+}
+
+.blue {
+  background-color: #00b5ce;
 }
 /*# sourceMappingURL=styles.css.map */

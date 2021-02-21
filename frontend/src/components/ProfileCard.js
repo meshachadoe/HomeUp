@@ -1,10 +1,15 @@
 import React from 'react'
 
-const ProfileCard = () => {
+const ProfileCard = ({name, isApplicant, location, period, index, selectHandler}) => {
     return (
-        <div className="profilecard">
-            <h3>James</h3>
-            <p>3 WEEKS</p>
+        <div className={isApplicant ? "profilecard" : "profilecard blue"} onClick={(e) => selectHandler(index)}>
+            <h3>{name}</h3>
+            {
+                location ?
+                <p>{location}</p> :
+                ""
+            }
+            <p>{period}</p>
         </div>
     )
 }

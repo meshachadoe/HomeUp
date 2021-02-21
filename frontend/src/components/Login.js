@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from "react-router-dom"
 import axios from 'axios'
 
@@ -6,6 +6,7 @@ const Login = () => {
     const [ username, setUsername ] = useState("")
     const [ password, setPassword ] = useState("")
     const [ error, setError ] = useState("")
+    const [ token, setToken ] = useState("")
 
     const history = useHistory()
 
@@ -21,6 +22,7 @@ const Login = () => {
             .then((response) => {
                 console.log("success")
                 console.log(response)
+                setToken(response.data.token)
                 history.push("/applicant")
                 // const body = await response.json();
                 // // console.log(body);
@@ -43,6 +45,10 @@ const Login = () => {
         }
     }
 
+    useEffect(() => {
+        localStorage.setItem('token', token)
+    }, [token])
+
     return (
         <div className="login">
             <div className="login__graphic">
@@ -63,7 +69,7 @@ const Login = () => {
                 <div className="login__form__register">
                     <p>not registered yet?</p>
                     <Link to="/register-applicant">register as applicant</Link>
-                    <Link to="/register-host">register as contributor</Link>
+                    <Link to="/register-host">register as host</Link>
                 </div>
             </div>
 

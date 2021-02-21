@@ -1,15 +1,16 @@
 import React from 'react'
 
-const DetailCard = () => {
+const DetailCard = ({name, isApplicant, location, contact, period, additional, username, confirmHandler}) => {
     return (
-        <div className="detailcard">
-            <h3>James Nguyen</h3>
+        <div className={isApplicant ? "detailcard" : "detailcard blue"}>
+            <h3>{name}</h3>
+            {location ? <p className="detailcard-location">{location}</p> : ""}
             <ul>
-                <li>PHONE NUMBER<br/> (111) - 222 - 3333</li>
-                <li>MINIMUM STAY<br/>3 weeks</li>
+                <li><span className="detailcard-subheading">PHONE NUMBER</span><br/>{contact}</li>
+                <li><span className="detailcard-subheading">MINIMUM STAY</span><br/>{period}</li>
             </ul>
-            <p>We can offer a small room with a twin sized bed. The room has a desk and a small bookshelf. The room is on the first floor. You are free to use the kitchen and the restroom as you please.  </p>
-            <button>confirm stay</button>
+            <p>{additional}</p>
+            <button onClick={(e) => confirmHandler(username)}>{isApplicant ? "confirm stay" : "i'm interested"}</button>
         </div>
     )
 }
