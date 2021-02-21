@@ -4,7 +4,7 @@ const auth = require("../middleware/auth")
 const AppCard = require("../models/appCard");
 const User = require("../models/user");
 
-router.post("/addCard", auth, async (req,res) => {
+router.post("/card", auth, async (req,res) => {
     try {
         const user = await User.findById(req.user.id);
     } catch (err) {
@@ -55,10 +55,11 @@ router.get("/getCard", auth, async (req, res) => {
 });
 
 /**
- * @description given the host username in the request body,
- * update the applicant card's hostUsername field
+ * @param id id of applicant card
+ * @param hostUsername username of the host card the applicant is intersted in
+ * @description update the applicant card's hostUsername field
  */
-router.put("/addCard/:id", auth, async (req, res) => {
+router.put("/card/:id", auth, async (req, res) => {
     // only update if user is authenticated
     let user;
     try {
@@ -79,7 +80,11 @@ router.put("/addCard/:id", auth, async (req, res) => {
     }
 });
 
-router.delete("/addCard/:id", auth, async (req, res) => {
+/**
+ * @param id id of applicant card
+ * @description delete applicant card when host confirms stay
+ */
+router.delete("/card/:id", auth, async (req, res) => {
     // only delete if user is authenticated
     let user;
     try {
@@ -87,6 +92,12 @@ router.delete("/addCard/:id", auth, async (req, res) => {
     } catch (err) {
         console.log(err);
         return res.send(401).json({ message: "Error in fetching user" });
+    }
+
+    try {
+        await AppCard.findByIdAndRemove({_id: req.params.id}).then(card => res.status(200).send("Successfully deleted"));
+    } catch (err) {
+        res.send(401).json({ message: "Error in deleting applicant card"});
     }
 });
 
