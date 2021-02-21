@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
+const auth = require("../middleware/auth");
 const User = require('../models/user');
 const HostCard = require('../models/hostCard');
 const AppCard = require('../models/appCard');
@@ -90,12 +91,29 @@ router.post("/login",
             const payload = { user: { id: user.id }};
             jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
                 if (err) throw err;
-                res.status(200).json({ token });
+                res.status(200).json({ token, isApp: user.isApplicant});
             });
         } catch (err) {
             console.log(err.message);
             res.status(500).json({ message: "Server error" });
         }
     });
+
+router.delete("/delete", auth, async (req, res) => {
+    let user;
+    try {
+        user = await User.findById(req.user.id);
+    } catch (err) {
+        console.log(err);
+        return res.status(401).json({ message: "Error in fetching user" });
+    }
+
+    try {
+        await User.findOneAndRemove({username: user.username})
+        res.status(200).send("Successfully deleted user");
+    } catch (err) {
+        res.status(401).json({ message: "Error in deleting user"});
+    }
+})
 
 module.exports = router;

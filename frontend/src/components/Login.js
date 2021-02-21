@@ -20,27 +20,17 @@ const Login = () => {
                 password: password
             })
             .then((response) => {
-                console.log("success")
-                console.log(response)
+                console.log(response.data)
                 setToken(response.data.token)
-                history.push("/applicant")
-                // const body = await response.json();
-                // // console.log(body);
-                // if (!response.ok) {
-                // //   setError(body.message)
-                // } else {
-                // //   setCookie("token", body.token);
-                // }
+                response.data.isApp ?
+                history.push('/applicant') :
+                history.push('/host')
             })
             .catch((error) => {
                 console.log(error)
                 if (error) {
                     setError(error.response.data.message) 
                 }
-                // if (error.response.data.message) {
-                //     setError(error.response.data.message)
-                // }
-                // setError(error.body.message)
             });
         }
     }

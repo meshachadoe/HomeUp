@@ -3,13 +3,15 @@ import ProfileCard from './ProfileCard'
 import DetailCard from './DetailCard'
 import DefaultCard from './DefaultCard'
 import axios from 'axios'
-import useHistory from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
+import jwt_decode from 'jwt-decode'
 
 const BACKEND_URL = 'http://localhost:5000/'
 
 const ApplicantView = () => {
+    const [user, setUser] = useState("")
     const [selected, setSelected] = useState(-1)
-    const [confirmed, setConfirmed] = useState()
+    const [confirmed, setConfirmed] = useState("")
     const [hosts, setHosts] = useState([])
     const history = useHistory()
 
@@ -20,7 +22,8 @@ const ApplicantView = () => {
             }
         })
         .then((response) => {
-            setHosts(response)
+            setUser(response.data.userCard[0].name)
+            setHosts(response.data.cards)
         })
         .catch((error) => {
             console.log(error.response)
@@ -28,12 +31,22 @@ const ApplicantView = () => {
     }, [])
 
     useEffect(() => {
+        if (confirmed === "") {
+            return
+        }
         axios.put(BACKEND_URL + 'app/updateCard', {
             hostUsername: confirmed
+        }, {
+            headers: {
+                token: localStorage.getItem('token')
+            }
         })
-        .then(
-            history.push("/")
-        )
+        .then((response) => {
+            console.log(response.data)
+            localStorage.setItem('name', user)
+            localStorage.setItem('hostObject', JSON.stringify(response.data))
+            history.push("/status-applicant")
+        })
         .catch((error) => {
             console.log(error)
         });
@@ -43,14 +56,14 @@ const ApplicantView = () => {
         if (selected === -1) {
             return <DefaultCard isApplicant={false} />
         } else {
-            const host = hosts.data[selected]
+            const host = hosts[selected]
             return <DetailCard 
                 name={host.name}
                 isApplicant={false}
                 location={host.location}
                 contact={host.phone}
                 period={host.maximumStay}
-                additional={host.additionalInfo}
+                additional={host.description}
                 username={host.username}
                 confirmHandler={setConfirmed}
             />
@@ -60,13 +73,13 @@ const ApplicantView = () => {
     return (
         <div className="dashboard">
             <div className="dashboard__overview">
-                <h2>Hey there!</h2>
+                <h2>Hello {user}!</h2>
                 {displayOverview(selected)}
             </div>
             <div className="dashboard__grid">
                 {
-                    hosts.data ?
-                    hosts.data.map((host, index) => (
+                    hosts ?
+                    hosts.map((host, index) => (
                         <ProfileCard
                             name={host.name}
                             isApplicant={false}

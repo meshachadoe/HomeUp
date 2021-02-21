@@ -19,16 +19,18 @@ const RegisterApplicant = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (!(username || name || password || confirmPassword || location || contact || period || additional))
+        if (!(username || name || password || confirmPassword || location || contact || period || additional)) {
             setError("Please fill in all fields")
             return
-        if (confirmPassword !== password)
+        }
+        if (confirmPassword !== password) {
             setError("Passwords do not match")
             return
-        if (password.length < 8) 
+        }
+        if (password.length < 8) {
             setError("Password has to be at least 8 characters");
             return;
-        
+        }
         axios.post(BACKEND_URL + 'user/register', {
             username,
             password,

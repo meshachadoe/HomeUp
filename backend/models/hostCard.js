@@ -24,6 +24,10 @@ const HostCardSchema = new Schema({
     description: {
         type: String,
         required: true,
+    },
+    inUse: {
+        type: Boolean,
+        default: false,
     }
 });
 

@@ -262,33 +262,39 @@ form button:hover {
       align-content: start;
 }
 
-.detailcard {
+.detailcard,
+.defaultcard {
   margin-top: 2rem;
   background-color: #6edb8d;
   border-radius: 10px;
   padding: 2rem 1rem;
 }
 
-.detailcard h3 {
+.detailcard h3,
+.defaultcard h3 {
   font-size: 3rem;
   font-weight: 300;
   line-height: 90%;
 }
 
-.detailcard ul {
+.detailcard ul,
+.defaultcard ul {
   margin: 1rem 0;
 }
 
-.detailcard ul li {
+.detailcard ul li,
+.defaultcard ul li {
   list-style: none;
 }
 
-.detailcard p {
+.detailcard p,
+.defaultcard p {
   padding: none;
   margin-bottom: 2rem;
 }
 
-.detailcard button {
+.detailcard button,
+.defaultcard button {
   background: none;
   border: 2px solid #060e21;
   padding: 0.5rem 1rem;
@@ -298,22 +304,33 @@ form button:hover {
   cursor: pointer;
 }
 
-.detailcard button:hover {
+.detailcard button:hover,
+.defaultcard button:hover {
   background-color: #060e21;
   color: #f3f3f3;
   -webkit-transition: background-color 0.2s, color 0.2s;
   transition: background-color 0.2s, color 0.2s;
 }
 
-.detailcard-location {
+.detailcard-location,
+.defaultcard-location {
   margin-top: 0.5rem;
   font-style: italic;
 }
 
-.detailcard-subheading {
+.detailcard-subheading,
+.defaultcard-subheading {
   padding-top: 1rem;
   font-style: italic;
   font-size: 0.8rem;
+}
+
+.defaultcard {
+  height: 30vh;
+}
+
+.defaultcard h3 {
+  font-size: 2rem;
 }
 
 .profilecard {
@@ -339,6 +356,120 @@ form button:hover {
 
 .profilecard p {
   text-align: right;
+}
+
+.statuspage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.statuspage .statuscard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 40%;
+  background-color: #00b5ce;
+  border-radius: 20px;
+  padding: 1rem;
+  line-height: 4rem;
+}
+
+.statuspage .statuscard__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.statuspage .statuscard__info ul {
+  width: 40%;
+  margin: 0;
+}
+
+.statuspage .statuscard__info ul li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+  line-height: 100%;
+  text-align: right;
+}
+
+.statuspage .statuscard__info .label {
+  text-align: right;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.statuspage .statuscard__button {
+  margin-top: 0.8rem;
+  background: none;
+  padding: 0.5rem 0;
+  border-radius: 10px;
+  border: 2px solid #060e21;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.statuspage .statuscard__button:hover {
+  background-color: #060e21;
+  color: #f3f3f3;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.statuspage .statuscard .green {
+  background-color: #6edb8d;
+}
+
+.statuspage .statuscard .green:hover {
+  background-color: #060e21;
+  color: #f3f3f3;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.statuspage .green {
+  background-color: #6edb8d;
+}
+
+.statuspage h2 {
+  font-weight: 300;
+  font-size: 3rem;
+  text-align: left;
+}
+
+.statuspage h3 {
+  font-size: 2rem;
+  line-height: 90%;
+  font-weight: 300;
+  width: 60%;
+}
+
+.statuspage p {
+  margin: 1rem 0 0.5rem 0;
+  font-style: italic;
 }
 
 .error {

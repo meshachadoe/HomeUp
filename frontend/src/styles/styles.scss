@@ -198,7 +198,8 @@ form {
 	}
 }
 
-.detailcard {
+.detailcard,
+.defaultcard {
 	margin-top: 2rem;
 	background-color: $primary-color;
 	border-radius: 10px;
@@ -243,6 +244,13 @@ form {
 	}
 }
 
+.defaultcard {
+	h3 {
+		font-size: 2rem;
+	}
+	height: 30vh;
+}
+
 .profilecard {
 	background-color: $primary-color;
 	border-radius: 10px;
@@ -256,6 +264,84 @@ form {
 	}
 	p {
 		text-align: right;
+	}
+}
+
+.statuspage {
+	display: flex;
+	height: 60vh;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.statuscard {
+		display: flex;
+		flex-direction: column;
+		width: 40%;
+		background-color: $secondary-color;
+		border-radius: 20px;
+		padding: 1rem;
+		line-height: 4rem;
+		&__info {
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			ul {
+				width: 40%;
+				margin: 0;
+				li {
+					margin-bottom: 0.5rem;
+					list-style: none;
+					line-height: 100%;
+					text-align: right;
+				}
+			}
+			.label {
+				text-align: right;
+				font-style: italic;
+				font-size: 0.8rem;
+			}
+		}
+		&__button {
+			margin-top: 0.8rem;
+			background: none;
+			padding: 0.5rem 0;
+			border-radius: 10px;
+			border: 2px solid $dark-color;
+			font-size: 1.2rem;
+			font-weight: 600;
+			cursor: pointer;
+			&:hover {
+				background-color: $dark-color;
+				color: $light-color;
+				transition: background-color 0.2s, color 0.2s;
+			}
+		}
+		.green {
+			background-color: $primary-color;
+			&:hover {
+				background-color: $dark-color;
+				color: $light-color;
+				transition: background-color 0.2s, color 0.2s;
+			}
+		}
+	}
+	.green {
+		background-color: $primary-color;
+	}
+	h2 {
+		font-weight: 300;
+		font-size: 3rem;
+		text-align: left;
+	}
+	h3 {
+		font-size: 2rem;
+		line-height: 90%;
+		font-weight: 300;
+		width: 60%;
+	}
+	p {
+		margin: 1rem 0 0.5rem 0;
+		font-style: italic;
 	}
 }
 

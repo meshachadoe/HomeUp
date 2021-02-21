@@ -26,6 +26,10 @@ const AppCardSchema = new Schema({
         required: true,
     },
     additionalInfo: String,
+    approved: {
+        type: Boolean,
+        default: false,
+    }
 });
 
 AppCardSchema.index({ username: 1, hostUsername: 1});
