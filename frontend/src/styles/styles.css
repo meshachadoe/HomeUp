@@ -10,7 +10,8 @@ h6,
 p,
 form input,
 form label,
-button {
+button,
+ul {
   margin: 0;
   padding: 0;
   border: none;
@@ -32,15 +33,16 @@ h2 {
 .App {
   height: 80vh;
   width: 80vw;
-  padding: 5vw 10vw;
+  padding: 5% 10%;
 }
 
 header {
-  height: 20%;
+  height: 10%;
 }
 
 header h1 {
   color: #6edb8d;
+  line-height: 75%;
 }
 
 form {
@@ -68,7 +70,7 @@ form .form-col {
 form label {
   font-weight: 300;
   margin: 0.6rem 0;
-  color: #00b5ce;
+  color: #060e21;
   font-size: 0.9rem;
 }
 
@@ -113,9 +115,9 @@ form button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login__form {
@@ -145,7 +147,9 @@ form button:hover {
   margin: 0.5rem 0;
 }
 
-.login__form__register button {
+.login a {
+  text-align: center;
+  text-decoration: none;
   margin: 0.3rem 0;
   padding: 0.6rem;
   border-radius: 20px;
@@ -155,7 +159,7 @@ form button:hover {
   font-size: 1rem;
 }
 
-.login__form__register button:hover {
+.login a:hover {
   background-color: #00b5ce;
   color: #f3f3f3;
   -webkit-transition: background-color 0.2s;
@@ -174,10 +178,21 @@ form button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.register h2 {
-  width: 20%;
+.register__heading h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.register__heading a {
+  font-size: 1rem;
+  background: none;
+  color: #00b5ce;
+  text-decoration: underline;
 }
 
 .register__form form {
@@ -204,5 +219,109 @@ form button:hover {
   background-color: #060e21;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+}
+
+.dashboard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard__overview {
+  margin-top: 2rem;
+}
+
+.dashboard__overview h2 {
+  margin-bottom: 0.5rem;
+}
+
+.dashboard__overview p {
+  width: 70%;
+}
+
+.dashboard__grid {
+  background-color: #f5f6f8;
+  padding: 1rem 1rem;
+  display: -ms-grid;
+  display: grid;
+  border-radius: 10px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  -ms-flex-line-pack: start;
+      align-content: start;
+}
+
+.detailcard {
+  margin-top: 2rem;
+  background-color: #6edb8d;
+  border-radius: 10px;
+  padding: 2rem 1rem;
+}
+
+.detailcard h3 {
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 90%;
+}
+
+.detailcard ul {
+  margin: 2rem 0;
+}
+
+.detailcard ul li {
+  list-style: none;
+}
+
+.detailcard p {
+  margin-bottom: 2rem;
+}
+
+.detailcard button {
+  background: none;
+  border: 2px solid #060e21;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.detailcard button:hover {
+  background-color: #060e21;
+  color: #f3f3f3;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.profilecard {
+  background-color: #6edb8d;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profilecard h3 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.profilecard p {
+  text-align: right;
 }
 /*# sourceMappingURL=styles.css.map */

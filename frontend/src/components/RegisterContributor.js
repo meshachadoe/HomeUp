@@ -1,9 +1,13 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const RegisterApplicant = () => {
     return (
         <div className="register">
-            <h2>register as applicant</h2>
+            <div className="register__heading">
+                <h2>register as<br/> host</h2>
+                <Link to="/">back to login</Link>
+            </div>
             <div className="register__form">
                 <form>
                     <div className="form-col">
