@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publishToHeroku": "cd ../ && git subtree push --prefix backend heroku-homeup-backend master || true"
   },
   "keywords": [],
   "author": "",
