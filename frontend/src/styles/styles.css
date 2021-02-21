@@ -37,12 +37,16 @@ h2 {
 }
 
 header {
-  height: 10%;
+  height: 15%;
 }
 
 header h1 {
   color: #6edb8d;
   line-height: 75%;
+}
+
+header .logo-blue {
+  color: #00b5ce;
 }
 
 form {
@@ -241,10 +245,6 @@ form button:hover {
   margin-bottom: 0.5rem;
 }
 
-.dashboard__overview p {
-  width: 70%;
-}
-
 .dashboard__grid {
   background-color: #f5f6f8;
   padding: 1rem 1rem;
@@ -280,6 +280,7 @@ form button:hover {
 }
 
 .detailcard p {
+  padding: none;
   margin-bottom: 2rem;
 }
 

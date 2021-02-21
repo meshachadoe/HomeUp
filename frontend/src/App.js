@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Login from './components/Login'
 import Header from './components/Header'
 import RegisterApplicant from './components/RegisterApplicant'
-import RegisterContributor from './components/RegisterContributor'
+import RegisterHost from './components/RegisterHost'
 import HostView from './components/HostView'
 import ApplicantView from './components/ApplicantView'
 
@@ -20,7 +20,7 @@ function App() {
 						<RegisterApplicant />
 					</Route>
 					<Route path="/register-host">
-						<RegisterContributor />
+						<RegisterHost />
 					</Route>
 					<Route path="/host">
 						<HostView />

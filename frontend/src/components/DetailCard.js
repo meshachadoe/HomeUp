@@ -8,7 +8,7 @@ const DetailCard = () => {
                 <li>PHONE NUMBER<br/> (111) - 222 - 3333</li>
                 <li>MINIMUM STAY<br/>3 weeks</li>
             </ul>
-            <p>I would like to have my own room.   </p>
+            <p>We can offer a small room with a twin sized bed. The room has a desk and a small bookshelf. The room is on the first floor. You are free to use the kitchen and the restroom as you please.  </p>
             <button>confirm stay</button>
         </div>
     )

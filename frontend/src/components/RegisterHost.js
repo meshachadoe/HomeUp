@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-
-const BACKEND_URL = 'http://localhost:5000/'
 
 const RegisterApplicant = () => {
     const [ username, setUsername ] = useState("")
@@ -16,20 +14,12 @@ const RegisterApplicant = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post(BACKEND_URL + 'user/register', {
+        axios.post('http://localhost:5000/user/register', {
             username: username,
             password: password,
             isApplicant: true,
         })
         .then(async (response) => {
-            // axios.post(BACKEND_URL + 'app/addCard', {
-            //     username,
-            //     name,
-            //     location,
-            //     contactInfo: contact,
-            //     minimumStay: period,
-            //     additionalInfo: additional
-            // })
             // const body = await response.json();
             // // console.log(body);
             // if (!response.ok) {
@@ -44,13 +34,12 @@ const RegisterApplicant = () => {
             setError(error.body.message)
         });
     }
-
+    
     return (
         <div className="register">
             <div className="register__heading">
-                <h2>register as<br/> applicant</h2>
+                <h2>register as<br/> host</h2>
                 <Link to="/">back to login</Link>
-
             </div>
             <div className="register__form">
                 <form onSubmit={handleSubmit}>

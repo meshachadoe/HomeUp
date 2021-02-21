@@ -43,10 +43,13 @@ h2 {
 }
 
 header {
-	height: 10%;
+	height: 15%;
 	h1 {
 		color: $primary-color;
 		line-height: 75%;
+	}
+	.logo-blue {
+		color: $secondary-color;
 	}
 }
 
@@ -180,9 +183,6 @@ form {
 		h2 {
 			margin-bottom: 0.5rem;
 		}
-		p {
-			width: 70%;
-		}
 	}
 	&__grid {
 		background-color: $grey;
@@ -212,6 +212,7 @@ form {
 		}
 	}
 	p {
+		padding: none;
 		margin-bottom: 2rem;
 	}
 	button {
