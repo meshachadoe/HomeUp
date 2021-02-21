@@ -4,6 +4,8 @@ import Login from './components/Login'
 import Header from './components/Header'
 import RegisterApplicant from './components/RegisterApplicant'
 import RegisterContributor from './components/RegisterContributor'
+import HostView from './components/HostView'
+import ApplicantView from './components/ApplicantView'
 
 function App() {
 	return (
@@ -22,6 +24,9 @@ function App() {
 					</Route>
 					<Route path="/host">
 						<HostView />
+					</Route>
+					<Route path="/applicant">
+						<ApplicantView />
 					</Route>
 				</Switch>
 			</Router>

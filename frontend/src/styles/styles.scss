@@ -3,6 +3,7 @@
 $primary-color: #6edb8d;
 $secondary-color: #00b5ce;
 $light-color: #f3f3f3;
+$grey: #f5f6f8;
 $dark-color: #060e21;
 
 html,
@@ -16,7 +17,8 @@ h6,
 p,
 form input,
 form label,
-button {
+button,
+ul {
 	margin: 0;
 	padding: 0;
 	border: none;
@@ -41,7 +43,7 @@ h2 {
 }
 
 header {
-	height: 20%;
+	height: 10%;
 	h1 {
 		color: $primary-color;
 		line-height: 75%;
@@ -165,5 +167,81 @@ form {
 				transition: background-color 0.2s;
 			}
 		}
+	}
+}
+
+.dashboard {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 2rem;
+	flex-direction: row;
+	&__overview {
+		margin-top: 2rem;
+		h2 {
+			margin-bottom: 0.5rem;
+		}
+		p {
+			width: 70%;
+		}
+	}
+	&__grid {
+		background-color: $grey;
+		padding: 1rem 1rem;
+		display: grid;
+		border-radius: 10px;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		align-content: start;
+	}
+}
+
+.detailcard {
+	margin-top: 2rem;
+	background-color: $primary-color;
+	border-radius: 10px;
+	padding: 2rem 1rem;
+	h3 {
+		font-size: 3rem;
+		font-weight: 300;
+		line-height: 90%;
+	}
+	ul {
+		margin: 2rem 0;
+		li {
+			list-style: none;
+		}
+	}
+	p {
+		margin-bottom: 2rem;
+	}
+	button {
+		background: none;
+		border: 2px solid $dark-color;
+		padding: 0.5rem 1rem;
+		width: 100%;
+		border-radius: 10px;
+		font-size: 1rem;
+		cursor: pointer;
+		&:hover {
+			background-color: $dark-color;
+			color: $light-color;
+			transition: background-color 0.2s, color 0.2s;
+		}
+	}
+}
+
+.profilecard {
+	background-color: $primary-color;
+	border-radius: 10px;
+	padding: 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	h3 {
+		font-weight: 300;
+		font-size: 2rem;
+	}
+	p {
+		text-align: right;
 	}
 }
