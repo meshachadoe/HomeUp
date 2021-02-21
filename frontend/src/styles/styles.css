@@ -119,9 +119,9 @@ info_card {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #00b5ce;
   height: 55vh;
   width: 25vw;
-  background-color: #6edb8d;
   margin-top: 1rem;
   border-radius: 20px;
   padding: 1rem;
@@ -135,7 +135,7 @@ list_card {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #6edb8d;
+  background-color: #00b5ce;
   border-radius: 20px;
   height: 15vh;
   width: 20vw;
@@ -243,7 +243,7 @@ list_card {
   transition: background-color 0.2s;
 }
 
-.view {
+.appview {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,12 +254,5 @@ list_card {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.view .apply {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 /*# sourceMappingURL=styles.css.map */

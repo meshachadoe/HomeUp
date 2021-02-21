@@ -2,7 +2,7 @@ import React from 'react'
 
 const ApplicantView = () => {
     return (
-        <div className="view">
+        <div className="appview">
             <div className="apply">
                 <h2>Hey, James</h2>
                 <info_card>

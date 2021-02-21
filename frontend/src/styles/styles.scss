@@ -99,9 +99,9 @@ form {
 info_card {
 	display: flex;
 	flex-direction: column;
+	background-color: $secondary-color;
 	height: 55vh;
 	width: 25vw;
-	background-color: $primary-color;
 	margin-top: 1rem;
 	border-radius: 20px;
 	padding: 1rem;
@@ -110,7 +110,7 @@ info_card {
 list_card {
 	display: flex;
 	flex-direction: row;
-	background-color: $primary-color;
+	background-color: $secondary-color;
 	border-radius: 20px;
 	height: 15vh;
 	width: 20vw;
@@ -181,12 +181,8 @@ list_card {
 	}
 }
 
-.view {
+.appview {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	.apply {
-		flex-direction: column;
-
-	}
 }
